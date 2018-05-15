@@ -37,6 +37,7 @@ vue优势
 
 - vue
 - es6
+- babel
 - webpack
 
 调试工具
