@@ -17,14 +17,20 @@ var app = new Vue({
             { id: 0, text: '蔬菜' },
             { id: 1, text: '奶酪' },
             { id: 2, text: '随便其它什么人吃的东西' }
-        ]
+        ],
+        seen: true,
+        url: 'https://www.baidu.com',
+        message: 'hello'
     },
     methods: {
-        reverseMessage: function() {
+        reverseMessage: function(msg) {
             this.messages = this.messages.reverse();
+            alert(msg);
         }
     },
-    components: {
-
+    computed: {
+        reversedMes: function() {
+            return this.message.split('').reverse().join('')
+        }
     }
 })

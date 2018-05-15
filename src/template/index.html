@@ -14,7 +14,7 @@
             {{message}}
         </li>
     </ol>
-    <button v-on:click="reverseMessage">测试</button>
+    <button v-on:click="reverseMessage('hello')">测试</button>
     <div>{{inputValue}}</div>
     <div>
         <input v-model="inputValue">
@@ -33,6 +33,18 @@
                     v-bind:key="item.id">
                 </todo-item>
             </ol>
+    </div>
+    <div>
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+    <div>
+        <a v-bind:href="url">跳到百度</a>
+    </div>
+    <div>
+        {{message}}
+    </div>
+    <div>
+        {{reversedMes}}
     </div>
 </div>
 </body>
