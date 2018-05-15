@@ -15,7 +15,7 @@ react，vue差别
 - react 单项数据流
 - vue双向数据流动，感觉上类似于knockout
 - react推荐做法，jsx+inline style, vue以简单易上手为目标，所有html和css还有js文件都可以放在一个文件里，进阶之后推荐的是使用webpack+vue-loader   的单文件组件格式
-- 模版文件 VS jsx，模版 VS 函数式render
+- 模版文件 VS jsx，template VS 函数式render
 
 react优势
 
@@ -29,3 +29,33 @@ vue优势
 
 
 
+## 2018年5月15日
+
+### 基础项目架构
+
+技术栈
+
+- vue
+- es6
+- webpack
+
+调试工具
+
+- Vue tools
+- https://github.com/vuejs/vue-devtools#vue-devtools
+
+注意点
+
+- 使用vue-loader的时候，*.vue 文件内部的模板会在构建时预编译成 JavaScript
+- 最终打包好的暴力是不需要编译器的。所以只用运行时版本即可
+- 开发过程中需要引入完整版
+
+ ```javascript
+module.exports = {
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+    }
+  }
+}
+ ```
