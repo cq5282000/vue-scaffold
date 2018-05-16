@@ -10,7 +10,7 @@ var app = new Vue({
     data: {
         title: '这是一个title',
         messages: [
-            1,3,4,5
+            1,3,4
         ],
         inputValue: 'hello vue',
         groceryList: [
