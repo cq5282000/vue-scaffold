@@ -46,6 +46,33 @@ module.exports = {
                 test: /\.vue$/,
                 use: ['vue-loader']
             },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'less-loader',
+                    'style-loader',
+                    // 'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            javascriptEnabled: true,
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader',
+                ],
+            },
         ],
     },
     devtool: 'cheap-module-eval-source-map',
