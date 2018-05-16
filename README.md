@@ -84,3 +84,31 @@ new webpack.optimize.UglifyJsPlugin({
 
 - 路由，vue-router
 - 使用vue-router创建单页面应用
+
+### 路由引入
+
+路由匹配到的组件会渲染到
+
+```html
+<router-view></router-view>
+```
+
+所以使用路由时，必须声明App模版存放router-view，
+
+```html
+<template>
+  <div>
+      <router-view></router-view>
+  </div>
+</template>
+```
+
+路由加载的时候需要渲染App模版来显示加载结果
+
+```javascript
+var app = new Vue({
+    el: '#app',
+    router,
+    render: h => h(App) // 渲染App
+});
+```
