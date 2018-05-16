@@ -66,3 +66,21 @@ module.exports = {
 
 - 组件是全局注册的
 - 发现一个特别恶心的特性，假如界面的里面使用了某个组件，在使用这个组件之前一定要先注册这个组件，注册组件的语句一定要放在页面加载之前，因为注册组件的行为不会触发界面的重新渲染
+
+## 2018年5月16日
+
+生产环境部署
+
+- 指定生产环境，以便在压缩时让uglifyJS自动删除警告代码块
+
+```javascript
+new webpack.optimize.UglifyJsPlugin({
+  compress: {
+    warnings: false
+  }
+})
+```
+规模化
+
+- 路由，vue-router
+- 使用vue-router创建单页面应用

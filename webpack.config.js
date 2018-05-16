@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+// const VueLoaderPlugin = require('vue-loader/lib/plugin')
 let publicPathStr = '/entry/'; // 公共路径字符串
 const path = require('path');
 module.exports = {
@@ -26,6 +27,13 @@ module.exports = {
             template: 'src/template/index.html', // 模版文件位置
             // chunks: [lastPortion], // 绑定对应打包的JS文件
         }),
+        // new VueLoaderPlugin()
+        // 指定生产环境，以便在压缩时可以让 UglifyJS 自动删除警告代码块,根据环境配置开启
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ],
     module: {
         rules: [
