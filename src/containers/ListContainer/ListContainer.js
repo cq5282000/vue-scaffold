@@ -14,7 +14,7 @@ export default {
             return this.$route.params.username
         },
         count() {
-            return store.state.count
+            return this.$store.state.count
         }
     },
     watch: {

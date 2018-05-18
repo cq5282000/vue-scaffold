@@ -1,4 +1,4 @@
-import Vue from './vuex'
+import Vue, { store } from './vuex'
 import VueRouter from 'vue-router';
 import router from './router';
 import App from './App.vue';
@@ -8,5 +8,6 @@ Vue.use(VueRouter);
 var app = new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App)
 });

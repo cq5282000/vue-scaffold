@@ -131,7 +131,17 @@ var app = new Vue({
 - component.js  ----- JS文件
 - component.less ------ 样式文件
 
-状态管理工具 vuex
+### 状态管理工具 vuex
 
 - 使用store.state里面的数据必须存放在计算属性computed里面，store中的数据都是reacttive（此处不知道怎么理解这个reactive）
+
+#### state
+
+- vuex使用一个单一状态树store，store应用的所有状态数据，是应用数据的唯一来源
+- store是应用唯一状态管理的数据，所以每个使用状态数据的组件都要引入store，为了避免这个麻烦，vuex提供了一个方式把store全局注入到了所有子组件中，在根组件中调用，通过this.$store引用
+- vuex提供了mapState功能，把计算属性映射到store.state,传参有对象和数组两种形式，
+- 
+
+
+
                                               
