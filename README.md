@@ -1,4 +1,4 @@
-# vue-scaffold
+# vue-scaffold 一个react程序员写的vue框架
 
 ## 2018年5月14日
 
@@ -112,3 +112,26 @@ var app = new Vue({
     render: h => h(App) // 渲染App
 });
 ```
+
+## 2018年5月17日
+
+对于一些react转vue的开发来说，可能更喜欢分离javascript和模版文件，可以引入vue-template-loader，对，我就是那个react转vue的程序员，这个插件的主要功能：
+
+- 把一个html模版编译成vue的render function
+- 支持scoped CSS和CSS module
+- 支持模版文件的热替换
+- 支持修饰符
+
+哎，折腾了一早上，瞎忙活了，方案不可行，弃掉。。。。。。。
+
+## 2018年5月18日
+
+采用文件拆分的方式拆分单组件文件，对于单个组件：
+- component.vue ----- 模版文件
+- component.js  ----- JS文件
+- component.less ------ 样式文件
+
+状态管理工具 vuex
+
+- 使用store.state里面的数据必须存放在计算属性computed里面，store中的数据都是reacttive（此处不知道怎么理解这个reactive）
+                                              

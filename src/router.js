@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router';
-import ListContainer from './containers/ListContainer.vue';
-import FormContainer from './containers/FormContainer.vue';
-import DetailContainer from './containers/DetailContainer.vue';
+import ListContainer from './containers/ListContainer/ListContainer.vue';
+import FormContainer from './containers/FormContainer/FormContainer.vue';
+import DetailContainer from './containers/DetailContainer/DetailContainer.vue';
 
 const routes = [
     {
@@ -9,7 +9,7 @@ const routes = [
         component: ListContainer
     },
     {
-        path: '/list',
+        path: '/list/:username',
         component: ListContainer
     },
     {
