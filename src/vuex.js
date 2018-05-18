@@ -9,6 +9,16 @@ export const store = new Vuex.Store({
         increment (state) {
             state.count ++;
         }
+    },
+    // computed: {
+    //     computedCount() {
+    //         return state.count ++;
+    //     }
+    // }
+    getters: {
+        computedCount: state => {
+            return state.count + 1;
+        }
     }
 })
 export default Vue;

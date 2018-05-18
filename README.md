@@ -139,9 +139,14 @@ var app = new Vue({
 
 - vuex使用一个单一状态树store，store应用的所有状态数据，是应用数据的唯一来源
 - store是应用唯一状态管理的数据，所以每个使用状态数据的组件都要引入store，为了避免这个麻烦，vuex提供了一个方式把store全局注入到了所有子组件中，在根组件中调用，通过this.$store引用
-- vuex提供了mapState功能，把计算属性映射到store.state,传参有对象和数组两种形式，
-- 
+- vuex提供了mapState功能，把计算属性映射到store.state，传参有对象和数组两种形式，
+- 组件声明的时候没必要吧所有状态存放在vuex，本地组件的独享的状态存档在local state
 
+#### getters
+
+- getter的概念类似于computed 属性，getter的结果会被存储，只有当依赖的的某些属性发生改变，他自身才会重新渲染，
+- getter是store的计算属性，可以在getter里对store的state的属性做某些处理
+- getter已经被注入到store
 
 
                                               

@@ -1,5 +1,6 @@
 import { store } from '../../vuex';
-const { count } = store.state
+const { count } = store.state;
+import { mapState } from 'vuex';
 export default {
     data: function() {
         return {
@@ -13,8 +14,14 @@ export default {
         username() {
             return this.$route.params.username
         },
-        count() {
-            return this.$store.state.count
+        // count() {
+        //     return this.$store.state.count
+        // },
+        ...mapState({
+            count: state => state.count,
+        }),
+        localhostCount() {
+            return this.$store.getters.computedCount;
         }
     },
     watch: {

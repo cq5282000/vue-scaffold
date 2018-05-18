@@ -6,6 +6,9 @@
         <div>
             <h1>{{count}}</h1>
         </div>
+        <div>
+            <h1>{{localhostCount}}</h1>
+        </div>
     </div>
 </template>
 <script src='./ListContainer.js'></script>
