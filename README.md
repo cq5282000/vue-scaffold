@@ -184,4 +184,4 @@ store.commit('increment', {
 
 #### module
 
-- vuex允许我们讲store分割成模块
+- vuex允许我们讲store分割成模块，每个模块有自己单独的state，mutation，action, getter
