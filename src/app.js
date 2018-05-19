@@ -1,4 +1,4 @@
-import Vue, { store } from './vuex'
+import Vue, { store } from './store/index'
 import VueRouter from 'vue-router';
 import router from './router';
 import App from './App.vue';
