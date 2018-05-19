@@ -1,6 +1,6 @@
 import { store } from '../../vuex';
 const { count } = store.state;
-import { mapState } from 'vuex';
+import { mapState, mapMutations, mapActions } from 'vuex';
 export default {
     data: function() {
         return {
@@ -36,9 +36,11 @@ export default {
         next();
     },
     methods: {
-        jumpToNewUrl() {
-            store.commit('increment');
-            // this.$router.push('form')
-        }
+        // ...mapMutations({
+        //     jumpToNewUrl: 'increment'
+        // }),
+        ...mapActions({
+            jumpToNewUrl: 'increment'
+        }),
     }
 }

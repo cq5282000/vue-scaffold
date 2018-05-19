@@ -1,24 +1,8 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
+import modulesAll from './modules';
 Vue.use(Vuex);
 export const store = new Vuex.Store({
-    state: {
-        count: 0
-    },
-    mutations: {
-        increment (state) {
-            state.count ++;
-        }
-    },
-    // computed: {
-    //     computedCount() {
-    //         return state.count ++;
-    //     }
-    // }
-    getters: {
-        computedCount: state => {
-            return state.count + 1;
-        }
-    }
+    ...modulesAll
 })
 export default Vue;

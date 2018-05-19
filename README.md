@@ -148,5 +148,40 @@ var app = new Vue({
 - getter是store的计算属性，可以在getter里对store的state的属性做某些处理
 - getter已经被注入到store
 
+#### mutation
 
-                                              
+- 更改vuex中store的唯一方法是提交mutation，vuex中的mutation类似于事件，
+- 每个mutation都有一个字符串的事件类型和一个回调函数，这个回调函数就是我们记性状态更改的地方，并且她会接受state作为第一参数
+
+```javascript
+store.commit('increment')
+```
+
+- 你可以向store.commit传入额外的参数，即mutation的负荷
+
+```javascript
+// ...
+mutations: {
+  increment (state, payload) {
+    state.count += payload.amount
+  }
+}
+store.commit('increment', {
+  amount: 10
+})
+```
+- mutation也需要遵守vue的某些响应规则，
+  1.提前在store中初始化好所有属性
+  2.当需要在对象上添加新属性时候，需要以新对象替换老对象
+- vuex中，mutation都是同步事物                                              
+
+#### action
+
+- action 提交的是mutation，而不是直接更改状态
+- action 可以包含任意异步操作
+- action 动作通过store.dispatch分发
+- store.dispatch可以返回promise
+
+#### module
+
+- vuex允许我们讲store分割成模块
