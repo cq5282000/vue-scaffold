@@ -1,6 +1,6 @@
-import { store } from '../../vuex';
-const { count } = store.state;
-import { mapState, mapMutations, mapActions } from 'vuex';
+// import { store } from '../../vuex';
+// const { count } = store.state;
+import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
 export default {
     data: function() {
         return {
@@ -15,14 +15,17 @@ export default {
             return this.$route.params.username
         },
         // count() {
-        //     return this.$store.state.count
+        //     return this.$store.state.listContainerModule.count
         // },
         ...mapState({
-            count: state => state.count,
+            count: state => state.listContainerModule.count,
         }),
-        localhostCount() {
-            return this.$store.getters.computedCount;
-        }
+        // localhostCount() {
+        //     return this.$store.getters.computedCount;
+        // }
+        ...mapGetters({
+            localhostCount: 'computedCount'
+        })
     },
     watch: {
         '$route' (to, from) {
