@@ -9,7 +9,9 @@ if (NODE_ENV.toLowerCase() === 'product') {
 }
 let webpackConfig = {
     entry: {
-        app: './src/app.js'
+        app: [
+            './src/app.js'
+        ]
     },
     output: {
         path: path.resolve(__dirname, 'dist'), // __dirname指的是当前文件所在目录的根目录
@@ -24,7 +26,7 @@ let webpackConfig = {
         }
     },
     // target: "node",
-    mode: 'development',
+    mode: NODE_ENV,
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html', // 生成文件位置
@@ -36,15 +38,7 @@ let webpackConfig = {
             'process.env': {
                 NODE_ENV: JSON.stringify(NODE_ENV),
             },
-        }),
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
-        // 指定生产环境，以便在压缩时可以让 UglifyJS 自动删除警告代码块,根据环境配置开启
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: false
-        //     }
-        // })
+        })
     ],
     module: {
         rules: [
@@ -98,5 +92,28 @@ let webpackConfig = {
         port: 8000,
     },
 }
-
+switch(NODE_ENV) {
+    case 'development':
+        webpackConfig.entry.app = [
+            'webpack-dev-server/client?http://localhost:8000/',
+            'webpack/hot/dev-server',
+            ...webpackConfig.entry.app, 
+        ];
+        webpackConfig.plugins = [
+            ...webpackConfig.plugins,
+            new webpack.NamedModulesPlugin(),
+            new webpack.HotModuleReplacementPlugin()
+        ];
+        break;
+    case 'production':
+        webpackConfig.plugins = [
+            ...webpackConfig.plugins,
+            // 指定生产环境，以便在压缩时可以让 UglifyJS 自动删除警告代码块,根据环境配置开启
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false
+                }
+            })
+        ];
+}
 module.exports = webpackConfig;

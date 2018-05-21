@@ -1,6 +1,6 @@
 export default {
     state: {
-        count: 1
+        count: 0
     },
     mutations: {
         increment (state) {
@@ -14,7 +14,7 @@ export default {
     // }
     getters: {
         computedCount: state => {
-            return state.count + 1;
+            return state.count + 4;
         }
     },
     actions: {

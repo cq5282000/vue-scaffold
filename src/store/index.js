@@ -7,5 +7,14 @@ export const store = new Vuex.Store({
     modules: {
         ...modulesAll
     }
-})
+});
 export default Vue;
+
+if (module.hot) {
+    module.hot.accept(['./modules/index.js'], () => {
+        const newModulesAll = require('./modules/index.js').default;
+        store.hotUpdate({
+            modules: newModulesAll
+        })
+    })
+}

@@ -213,3 +213,5 @@ plugins: [
   new webpack.HotModuleReplacementPlugin()
 ]
 ```
+
+- vuex支持在开发过程中热重载mutation，module，action，getter的热重载
