@@ -198,3 +198,18 @@ store.commit('increment', {
 
 - 在严格模式下，无论何时发生了状态变更且不是有mutation函数引起的，将会抛出错误，这能保证所有的状态变更都能被调试工具跟踪到
 - 在发布环境下要关闭严格模式，因为严格模式会深度监测状态树来检测不合规的状态变更，请确保在发布环境下关闭严格模式，以避免性能损失
+
+### 热重载
+
+- 首先在webpack配置中开启热加载模式
+  
+```javascript
+devServer: {
+  ....
+  hot: true
+}
+plugins: [
+  new webpack.NamedModulesPlugin(),
+  new webpack.HotModuleReplacementPlugin()
+]
+```
