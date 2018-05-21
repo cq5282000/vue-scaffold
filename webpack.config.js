@@ -3,7 +3,11 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 let publicPathStr = '/entry/'; // 公共路径字符串
 const path = require('path');
-module.exports = {
+let NODE_ENV = process.env.NODE_ENV || 'production';
+if (NODE_ENV.toLowerCase() === 'product') {
+    NODE_ENV = 'production';
+}
+let webpackConfig = {
     entry: {
         app: './src/app.js'
     },
@@ -27,7 +31,14 @@ module.exports = {
             template: 'src/template/index.html', // 模版文件位置
             // chunks: [lastPortion], // 绑定对应打包的JS文件
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify(NODE_ENV),
+            },
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
         // 指定生产环境，以便在压缩时可以让 UglifyJS 自动删除警告代码块,根据环境配置开启
         // new webpack.optimize.UglifyJsPlugin({
         //     compress: {
@@ -87,3 +98,5 @@ module.exports = {
         port: 8000,
     },
 }
+
+module.exports = webpackConfig;
