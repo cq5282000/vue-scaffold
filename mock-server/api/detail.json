@@ -1,0 +1,17 @@
+{
+    "code": 200,
+    "msg": "success",
+    "data": [{
+        "id": 1,
+        "reportName": "testReport",
+        "tableName": "dprpt_kp_bonus_newshop_detail_31_m",
+        "businessLineId": 1,
+        "reportColumnsEntityList": null
+    }, {
+        "id": 1,
+        "reportName": "testReport2",
+        "tableName": "dprpt_kp_bonus_newshop_detail_31_m",
+        "businessLineId": 1,
+        "reportColumnsEntityList": null
+    }]
+}
