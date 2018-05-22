@@ -82,7 +82,7 @@ let webpackConfig = {
     },
     devtool: 'cheap-module-eval-source-map',
     devServer: {
-        hot: true, // 告诉 dev-server 我们在使用 HMR
+        hot: NODE_ENV === 'development', // 告诉 dev-server 我们在使用 HMR
         contentBase: path.resolve(__dirname, 'node_modules'),
         inline: true,
         historyApiFallback: true,

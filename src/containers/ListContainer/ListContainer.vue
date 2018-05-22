@@ -9,6 +9,7 @@
         <div>
             <h1>{{localhostCount}}</h1>
         </div>
+        <div>ceshi11111</div>
     </div>
 </template>
 <script src='./ListContainer.js'></script>

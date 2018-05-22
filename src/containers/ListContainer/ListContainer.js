@@ -18,7 +18,7 @@ export default {
         //     return this.$store.state.listContainerModule.count
         // },
         ...mapState({
-            count: state => state.listContainerModule.count,
+            count: state => state.listContainerModule.count + 5,
         }),
         // localhostCount() {
         //     return this.$store.getters.computedCount;
