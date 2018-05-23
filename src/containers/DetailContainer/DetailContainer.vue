@@ -1,16 +1,13 @@
 <template>
-    <h1>hello world</h1>
+<div>
+     <div>
+        <h1>{{name}}</h1>
+        <ComponentA v-bind:props="sendProps"/>
+    </div>
+    <button v-on:click="onChangeProps">change props</button>
+    <ComponentB v-on:myevent="onComponentBClick"/>
+</div>
 </template>
-<script>
-export default {
-    data () {
-        return {
-            inputval: '',
-            searchList: [],
-            listshow: false,
-            dialogshow: false
-        }
-    },
-}
-</script>
+<script src="./DetailContainer.js"></script>
+<style src="./DetailContainer.less"></style>
 
