@@ -17,6 +17,16 @@
         <input type="checkbox" id="checkbox" v-model="checked">
         <label for="checkbox">{{ checked }}</label>
     </div>
+    <div>
+        <ComponentC v-bind:todos="todos" v-bind:querystring="querystring">
+            <template slot-scope="slotScope">
+                {{slotScope.todo.id}}
+            </template>
+            <!-- <template slot-scope="slotString">
+                {{slotString.querystring}}
+            </template> -->
+        </ComponentC>
+    </div>
 </div>
 </template>
 <script src="./FormContainer.js"></script>

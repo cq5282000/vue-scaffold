@@ -230,3 +230,4 @@ plugins: [
 - props可以通过v-bind动态传值
 - 组件的所有props都是单向下行绑定
 - 父级的props的更新会向下流动到自组件中，但是反过来不行
+- 插槽类似于react的this.props.children

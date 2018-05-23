@@ -1,3 +1,4 @@
+import ComponentC from '../../components/ComponentC/index.vue';
 export default {
     data: function() {
         return {
@@ -16,7 +17,8 @@ export default {
             inputValue: '',
             isActive1: true,
             isActive2: false,
-            checked: true
+            checked: true,
+            querystring: '123123122312'
         }
     },
     beforeCreate: function() {
@@ -59,6 +61,9 @@ export default {
         sayHi: function(message) {
             console.log(message);
         }
+    },
+    components: {
+        ComponentC
     }
 }
 
