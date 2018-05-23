@@ -5,7 +5,7 @@
         <ComponentA v-bind:props="sendProps"/>
     </div>
     <button v-on:click="onChangeProps">change props</button>
-    <ComponentB v-on:myevent="onComponentBClick"/>
+    <ComponentB v-bind:inputValue="inputValue" v-on:myevent="onComponentBClick" v-on:inputevent="onInputChange"/>
 </div>
 </template>
 <script src="./DetailContainer.js"></script>
