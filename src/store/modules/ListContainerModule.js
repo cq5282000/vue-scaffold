@@ -14,7 +14,7 @@ export default {
     // }
     getters: {
         computedCount: state => {
-            return state.count + 4;
+            return state.count + 3;
         }
     },
     actions: {

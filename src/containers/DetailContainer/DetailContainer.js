@@ -1,3 +1,4 @@
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import ComponentA from '../../components/ComponentA/index.vue';
 import ComponentB from '../../components/ComponentB/index.vue';
 export default {
@@ -27,6 +28,23 @@ export default {
         },
         onInputChange: function(val) {
             console.log(val);
+        },
+        ...mapActions({
+            onPlusClick: 'increase',
+            onMinusClick: 'decline',
+            fetchInfo: 'fetchInfo'
+        }),
+        fetchInfoClick: function() {
+            this.fetchInfo();
         }
+    },
+    computed: {
+        ...mapState({
+            count: state => state.detailContainerModule.count,
+            listData: state => state.detailContainerModule.listData
+        }),
+        ...mapGetters({
+            getterCount: 'getterCount'
+        })
     }
 }

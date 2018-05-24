@@ -4,7 +4,6 @@ import querystring from 'querystring';
 import * as requestMethod from '../configs/requestMethod';
 import requestPath from './requestPath';
 import sleep from './sleep';
-import * as requestMethod from '../configs/requestMethod';
 import envConst from '../configs/envConst';
 import * as env from '../configs/env'
 

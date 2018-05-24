@@ -19,8 +19,8 @@
     </div>
     <div>
         <ComponentC v-bind:todos="todos" v-bind:querystring="querystring">
-            <template slot-scope="slotScope">
-                {{slotScope.todo.id}}
+            <template slot-scope="{todo}">
+                {{todo.id}}
             </template>
             <!-- <template slot-scope="slotString">
                 {{slotString.querystring}}

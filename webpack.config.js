@@ -10,6 +10,7 @@ if (NODE_ENV.toLowerCase() === 'product') {
 let webpackConfig = {
     entry: {
         app: [
+            'babel-polyfill',
             './src/app.js'
         ]
     },
